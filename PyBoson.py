@@ -220,7 +220,7 @@ def SubmitBosonTasks(
 #' @export
 def WaitForJobsToFinish(job_ids, ping = 10, print_job_status = ('summary', 'detailed', 'none')):
     df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
-    if (df_monitor_status not in ('SUCCEEDED', 'FAILED') :
+    if (df_monitor_status not in ['SUCCEEDED', 'FAILED']):
         time.sleep(ping)
     df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
 
