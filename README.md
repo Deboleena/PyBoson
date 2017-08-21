@@ -10,8 +10,8 @@ From PyBoson import \*\
 \
 \# Configuration \#\
 AWSConfigure(\
-  aws.access.key.id = '****',\
-  aws.secret.access.key = '****'\
+  aws.access.key.id = '\*\*\*\*',\
+  aws.secret.access.key = '\*\*\*\*'\
 )\
 \
 \# Setup \#\
