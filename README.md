@@ -6,7 +6,7 @@ git clone https://github.com/Deboleena/PyBoson.git
 
 # Usage
 \# Import \#\
-From PyBoson import \*\
+from PyBoson import \*\
 \
 \# Configuration \#\
 AWSConfigure(\
