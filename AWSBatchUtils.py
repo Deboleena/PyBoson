@@ -1,4 +1,4 @@
-# run: python AWSBatchUtils_py
+# run: python AWSBatchUtils.py
 
 import json
 import commands

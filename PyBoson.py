@@ -218,11 +218,11 @@ def SubmitBosonTasks(
 #' @param ping frequency of printing job status in seconds; default is every 10 seconds
 #' @param print_job_status level of details in printing job status; default value is 'summary'
 #' @export
-# def WaitForJobsToFinish(job_ids, ping = 10, print_job_status = ('summary', 'detailed', 'none')):
-#     df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
-#     if (df_monitor_status not in ('SUCCEEDED', 'FAILED') :
-#         time.sleep(ping)
-#     df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
+def WaitForJobsToFinish(job_ids, ping = 10, print_job_status = ('summary', 'detailed', 'none')):
+    df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
+    if (df_monitor_status not in ('SUCCEEDED', 'FAILED') :
+        time.sleep(ping)
+    df_monitor = MonitorJobStatus(job_ids, print_job_status = print_job_status)
 
 
 #' Fetch outcomes of jobs submitted as a Boson batch
