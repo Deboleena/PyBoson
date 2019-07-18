@@ -7,12 +7,12 @@ PyBoson leverage AWS Batch and the Simple Storage Service (S3) for performing di
 ## Prerequisites
 There are 4 steps a user will require to carry out before running distributed computations using PyBoson. These steps are administrative, therefore can not be automated away.
 
-    1. Create an AWS account and provide billing credentials.
-    2. Go to AWS S3 (https://s3.console.aws.amazon.com) and create an S3 bucket (or a subdirectory) that PyBoson can use as a data dump-ground.
-    3. Go to AWS IAM (https://console.aws.amazon.com/iam/home) and do the following:
-        1. Click on ‘Users’ on the left pane. Create an user with Programmatic Access, AWS Management Console Access, a console password, and attach the AdministratorAccess policy to their role. Copy the Access Key ID, Secret Access Key and Password
-        2. Click on ‘Roles’ on the left pane. Create a new AWS Batch Service Role and attach the following policies: AmazonS3FullAccess, AWSBatchFullAccess, AWSBatchServiceRole. Note the Service Role ARN.
-    4. Select an AWS region on the top pane. Go to AWS VPC and observe that there exists a default VPC already. Go to Security Groups and copy the Group ID of the ‘default’ VPC security group. Go to ‘Subnets’ and copy the 3 Subnet IDs for this VPC. Advanced AWS users can create their own VPC and Security Group and use those entities instead.
+1. Create an AWS account and provide billing credentials.
+2. Go to AWS S3 (https://s3.console.aws.amazon.com) and create an S3 bucket (or a subdirectory) that PyBoson can use as a data dump-ground.
+3. Go to AWS IAM (https://console.aws.amazon.com/iam/home) and do the following:
+    a. Click on ‘Users’ on the left pane. Create an user with Programmatic Access, AWS Management Console Access, a console password, and attach the AdministratorAccess policy to their role. Copy the Access Key ID, Secret Access Key and Password
+    b. Click on ‘Roles’ on the left pane. Create a new AWS Batch Service Role and attach the following policies: AmazonS3FullAccess, AWSBatchFullAccess, AWSBatchServiceRole. Note the Service Role ARN.
+4. Select an AWS region on the top pane. Go to AWS VPC and observe that there exists a default VPC already. Go to Security Groups and copy the Group ID of the ‘default’ VPC security group. Go to ‘Subnets’ and copy the 3 Subnet IDs for this VPC. Advanced AWS users can create their own VPC and Security Group and use those entities instead.
 
 
 
