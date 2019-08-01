@@ -1,0 +1,11 @@
+README.md
+setup.py
+PyBoson.egg-info/PKG-INFO
+PyBoson.egg-info/SOURCES.txt
+PyBoson.egg-info/dependency_links.txt
+PyBoson.egg-info/top_level.txt
+pyboson/AWSBatchUtils.py
+pyboson/BosonJobMaster.py
+pyboson/PyBoson.py
+pyboson/__init__.py
+pyboson/s3utils.py

@@ -4,17 +4,16 @@ Deboleena Mukhopadhyay, Chiranjit Mukherjee
 
 PyBoson leverage AWS Batch and the Simple Storage Service (S3) for performing distributed computing at scale. AWS provides a command line interface (CLI) that allow users to perform all necessary tasks such as user-authentication, scaling up or down the computing environment, submitting jobs, reading and writing files on S3 etc. However, using this CLIs requires in-depth understanding of AWS and therefore it is hard to use. PyBoson abstracts away nitty-gritty's of these functionalities from the user, and let user distribute their work with bare minimum inputs.
 
-## Prerequisites
-There are 4 steps a user will require to carry out before running distributed computations using PyBoson. These steps are administrative, therefore can not be automated away.
-
+## Administrivia
 1. Create an AWS account and provide billing credentials.
-2. Go to AWS S3 (https://s3.console.aws.amazon.com) and create an S3 bucket (or a subdirectory) that PyBoson can use as a data dump-ground.
-3. Go to AWS IAM (https://console.aws.amazon.com/iam/home) and do the following:
-    * Click on ‘Users’ on the left pane. Create an user with Programmatic Access, AWS Management Console Access, a console password, and attach the AdministratorAccess policy to their role. Copy the Access Key ID, Secret Access Key and Password.
+2. Go to [AWS S3](https://s3.console.aws.amazon.com) and create an S3 bucket (or a subdirectory) that PyBoson can use as data-dumpground. Make sure the bucket is protected from data leaks.
+3. Go to [AWS IAM](https://console.aws.amazon.com/iam/home):
+    * Click on ‘Users’ on the left pane. Create an user with Programmatic Access. Copy the Access Key ID, Secret Access Key and Password.
     * Click on ‘Roles’ on the left pane. Create a new AWS Batch Service Role and attach the following policies: AmazonS3FullAccess, AWSBatchFullAccess, AWSBatchServiceRole. Note the Service Role ARN.
 4. Select an AWS region on the top pane. Go to AWS VPC and observe that there exists a default VPC already. Go to Security Groups and copy the Group ID of the ‘default’ VPC security group. Go to ‘Subnets’ and copy the 3 Subnet IDs for this VPC. Advanced AWS users can create their own VPC and Security Group and use those entities instead.
 
 ## Installation
+`pip install -e .`
 User needs to install AWS CLI as well the PyBoson library on their local system.
 
 AWS CLI  can be easily installed by running on a system that has pip and Python installed:
@@ -24,11 +23,8 @@ To install PyBoson, run the following in console:
 `git clone https://github.com/Deboleena/PyBoson.git`
 
 
-
-# Installation in Console
-git clone https://github.com/Deboleena/PyBoson.git
-
-# Usage
+## Usage
+```
 \# Import \#\
 from PyBoson import \*\
 \
@@ -67,3 +63,4 @@ print(out)\
 \# Cleanups \#\
 BatchCleanup(batch.id = 1, s3.bucket = 's3://boson-base/')\
 BosonCleanup()
+```
